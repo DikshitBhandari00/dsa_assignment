@@ -1,0 +1,77 @@
+# prog_7.c — Dijkstra's Shortest Paths (Single Source)
+
+Description
+
+`prog_7.c` reads a weighted graph (treated as undirected by default) and
+computes shortest paths from a single source vertex to all other vertices using
+Dijkstra's algorithm. The implementation uses an adjacency matrix and the
+classic O(n^2) selection-based Dijkstra.
+
+Input format
+
+- First line: `n m` where `n` is number of vertices (0..n-1) and `m` is number of
+  edges.
+- Next `m` lines: `u v w` representing an edge between `u` and `v` with weight
+  `w`. The program keeps the smallest weight if multiple edges are provided.
+- Final line: `s` — the source vertex.
+
+Example
+
+Input:
+
+5 6
+0 1 10
+0 3 5
+1 2 1
+3 1 3
+3 2 9
+3 4 2
+0
+
+Output:
+
+Vertex  Distance  Path
+0       0         0
+1       8         0 -> 3 -> 1
+2       9         0 -> 3 -> 1 -> 2
+3       5         0 -> 3
+4       7         0 -> 3 -> 4
+
+Complexity
+
+- Time: O(n^2) due to linear search for the next vertex in each of n iterations.
+- Space: O(n^2) for the adjacency matrix.
+
+Notes and improvements
+
+- This code does not support negative weights. Use the Bellman–Ford algorithm for
+  graphs with negative edges.
+- For large sparse graphs prefer an adjacency list + priority queue (binary heap
+  or Fibonacci heap) to get O(m log n) or better performance.
+- The program currently treats input edges as undirected (adds both u->v and
+  v->u). Modify if directed behavior is required.
+
+Build & Run (Windows, GCC/MinGW)
+
+1. Compile:
+
+   gcc prog_7.c -o prog_7
+
+2. Run:
+
+   prog_7.exe
+
+Git instructions (after you verify the program locally)
+
+1. Stage and commit:
+
+   git add prog_7.c doc_7.md
+   git commit -m "Add prog_7: Dijkstra's algorithm (adjacency-matrix implementation)"
+
+2. Push:
+
+   git push origin HEAD
+
+If you'd like, I can convert this to an adjacency-list + min-heap version for
+better performance on sparse graphs, or add a short test suite. Tell me which
+option you'd prefer.

@@ -2,20 +2,20 @@
 
 Description
 
-`prog_5.c` implements an undirected graph using an adjacency matrix and provides
+'prog_5.c' implements an undirected graph using an adjacency matrix and provides
 functions to traverse the graph using Breadth-First Search (BFS) and Depth-First
 Search (DFS).
 
 
 Key functions
 
-- `init_graph(struct Graph *g, int n)` — Initialize an n-vertex graph and
+- 'init_graph(struct Graph *g, int n)' — Initialize an n-vertex graph and
   zero the adjacency matrix.
-- `add_edge(struct Graph *g, int u, int v)` — Add an undirected edge between
-  vertices `u` and `v`.
-- `print_adj_matrix(struct Graph *g)` — Print adjacency matrix to console.
-- `bfs(struct Graph *g, int s)` — Perform BFS from source `s` and print order.
-- `dfs(struct Graph *g, int s)` — Perform DFS from source `s` (recursive).
+- 'add_edge(struct Graph *g, int u, int v)' — Add an undirected edge between
+  vertices 'u' and 'v'.
+- 'print_adj_matrix(struct Graph *g)' — Print adjacency matrix to console.
+- 'bfs(struct Graph *g, int s)' — Perform BFS from source 's' and print order.
+- 'dfs(struct Graph *g, int s)' — Perform DFS from source 's' (recursive).
 
 Example graph used in the program
 
